@@ -2,6 +2,7 @@
 import { FaReact } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
+import "./index.css";
 
 const Projects = () => {
   const projects = [
@@ -84,12 +85,12 @@ const Projects = () => {
     window.open(item, "_blank");
   };
   return (
-    <div className="max-w-[800px] bg-green-500 w-full flex flex-col mt-5 p-5 space-y-4 items-start justify-center">
+    <div className=" w-full flex flex-col mt-5 p-5 space-y-4 items-center justify-center">
       <div style={{ color: "#141c3a", fontWeight: "700" }}>My Recent Work</div>
       <div style={{ color: "#141c3a" }}>
         Here are a few past projects I&apos;ve worked on.
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 items-center mx-2 gap-4">
         {projects.map((item) => (
           <div
             className="card"

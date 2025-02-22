@@ -2,7 +2,7 @@ import React from "react";
 
 const Experience = () => {
   return (
-    <div className="flex mt-5 flex-col bg-red-500 justify-center items-start max-w-[800px] p-5 space-y-4">
+    <div className="flex mt-5 flex-col justify-center items-start max-w-[800px] p-5 space-y-4">
       <h2 className="text-2xl font-bold">Experience</h2>
       <div>
         <h3>Morr Computing</h3>

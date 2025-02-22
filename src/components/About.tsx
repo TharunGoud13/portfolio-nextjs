@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full flex  flex-col max-w-[800px] p-5 mt-5 space-y-4 bg-red-500">
+    <div className="w-full flex  flex-col max-w-[800px] p-5 mt-5 space-y-4">
       <h1 className="text-3xl font-bold">ABOUT ME</h1>
       <h2>I&apos;m Tharun Goud,</h2>
       <p>

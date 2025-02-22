@@ -4,10 +4,13 @@ import Introduction from "@/components/Introduction";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import React from "react";
+import "./globals.css";
+// import { Theme } from "@/components/Theme";
 
 const page = () => {
   return (
-    <div className="flex flex-col  h-full items-center justify-center">
+    <div className="flex flex-col h-full items-center justify-center">
+      {/* <Theme /> */}
       <Introduction />
       <About />
       <Skills />
