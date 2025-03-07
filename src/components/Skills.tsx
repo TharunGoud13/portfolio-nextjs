@@ -34,7 +34,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="mt-5 flex flex-col w-full p-5 space-y-2 items-start max-w-[800px] ">
+    <div className="mt-5 flex flex-col w-full p-5 space-y-2 items-start  md:max-w-[800px] ">
       <h1 className="text-2xl font-semibold">Skills</h1>
       <div className="max-w-5xl mx-auto px-8">
         <HoverEffect items={skills} />

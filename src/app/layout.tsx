@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <BackgroundBeamsWithCollision>
+            {children}
+          </BackgroundBeamsWithCollision>
         </ThemeProvider>
       </body>
     </html>
