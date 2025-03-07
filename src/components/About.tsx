@@ -1,4 +1,5 @@
 import React from "react";
+// import { Meteors } from "./ui/meteors";
 
 const About = () => {
   return (
@@ -19,6 +20,7 @@ const About = () => {
         Additionally, I&apos;m exploring motion libraries like Framer Motion and
         Postgres and Mongo Databases
       </h3>
+      {/* <Meteors number={10} /> */}
     </div>
   );
 };

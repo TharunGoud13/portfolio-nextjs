@@ -3,6 +3,8 @@ import { FaReact } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import "./index.css";
+import styled from "styled-components";
+import Link from "next/link";
 
 const Projects = () => {
   const projects = [
@@ -81,46 +83,137 @@ const Projects = () => {
     },
   ];
 
-  const handleClick = (item: string) => {
-    window.open(item, "_blank");
-  };
   return (
     <div className=" w-full flex flex-col mt-5 p-5 space-y-4 items-center justify-center">
-      <div style={{ color: "#141c3a", fontWeight: "700" }}>My Recent Work</div>
-      <div style={{ color: "#141c3a" }}>
+      <div className=" text-2xl font-bold text-[#32a6ff]">My Recent Work</div>
+      <div className="text-[#99999d] text-md">
         Here are a few past projects I&apos;ve worked on.
       </div>
-      <div className="grid grid-cols-3 items-center mx-2 gap-4">
+      <div className="grid grid-cols-3 items-center mx-2 gap-x-10 gap-y-5">
         {projects.map((item) => (
-          <div
-            className="card"
-            key={item.id}
-            onClick={() => handleClick(item.link)}
-          >
-            <h3 className="card__title">{item.name}</h3>
-            <p className="card__content" style={{ fontWeight: "800" }}>
-              {item.skills}{" "}
-            </p>
-            <div style={{ fontSize: "40px", margin: "10px" }}>{item.url}</div>
-            <div className="card__arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                height="15"
-                width="15"
-              >
-                <path
-                  fill="#fff"
-                  d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"
-                ></path>
-              </svg>
-            </div>
-          </div>
+          <StyledWrapper key={item.id}>
+            <Link target="_blank" href={item.link} className="notification">
+              <div className="notiglow" />
+              <div className="notiborderglow" />
+              <div className="notititle">{item.name}</div>
+              <div className="notibody">{item.skills}</div>
+            </Link>
+          </StyledWrapper>
         ))}
       </div>
     </div>
   );
 };
+
+const StyledWrapper = styled.div`
+  gap: 1rem;
+  .notification {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 18rem;
+    height: 8rem;
+    background: #29292c;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 16px;
+    --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+    --color: #32a6ff;
+  }
+
+  .notification:before {
+    position: absolute;
+    content: "";
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: #18181b;
+    z-index: 2;
+  }
+
+  .notification:after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+  }
+
+  .notification:hover:after {
+    transform: translateX(0.15rem);
+  }
+
+  .notititle {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+  }
+
+  .notification:hover .notititle {
+    transform: translateX(0.15rem);
+  }
+
+  .notibody {
+    color: #99999d;
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+  }
+
+  .notification:hover .notibody {
+    transform: translateX(0.25rem);
+  }
+
+  .notiglow,
+  .notiborderglow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      circle closest-side at center,
+      white,
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  .notiglow {
+    z-index: 3;
+  }
+
+  .notiborderglow {
+    z-index: 1;
+  }
+
+  .notification:hover .notiglow {
+    opacity: 0.1;
+  }
+
+  .notification:hover .notiborderglow {
+    opacity: 0.1;
+  }
+
+  .note {
+    color: var(--color);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    width: 75%;
+  }
+`;
 
 export default Projects;

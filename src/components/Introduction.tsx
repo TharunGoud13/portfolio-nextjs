@@ -7,6 +7,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { motion } from "motion/react";
 import { BiLogoGmail } from "react-icons/bi";
 import { Typewriter } from "react-simple-typewriter";
+import { Theme } from "./Theme";
+import Link from "next/link";
 const Introduction = () => {
   return (
     <motion.div
@@ -17,6 +19,8 @@ const Introduction = () => {
         <div className="flex items-start w-full space-y-2 justify-center flex-col">
           {/* <h1 className="text-2xl font-semibold">Tharun Goud</h1> */}
           <h1 className="text-3xl">
+            <Theme />
+
             <Typewriter
               words={["Tharun Goud"]}
               loop={1000}
@@ -35,13 +39,22 @@ const Introduction = () => {
             Hyderabad, Telangana
           </span>
           <h1 className="flex gap-2.5 items-center">
-            <BiLogoGmail className="text-red-500 h-5 w-5" />
+            <BiLogoGmail className="text-red-500 h-7 w-7" />
             amaravaitharun13@gmail.com
           </h1>
           <div className="flex items-center gap-4">
-            <FaWhatsapp className="h-5 w-5 text-green-500 cursor-pointer hover:scale-125 delay-300" />
-            <FaGithub className="h-5 w-5 cursor-pointer hover:scale-125 delay-300" />
-            <FaLinkedin className="h-5 w-5 cursor-pointer hover:scale-125 delay-300" />
+            <Link target="_blank" href="https://wa.me/916303556309">
+              <FaWhatsapp className="h-7 w-7 text-green-500 cursor-pointer hover:scale-125 duration-300 delay-300" />
+            </Link>
+            <Link target="_blank" href="https://github.com/TharunGoud13">
+              <FaGithub className="h-7 w-7 cursor-pointer hover:scale-125 duration-300 delay-300" />
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/tharun-kumar-goud-6879661a0/"
+            >
+              <FaLinkedin className="h-7 w-7 cursor-pointer hover:scale-125 duration-300 delay-300" />
+            </Link>
           </div>
           <div className="text-center cursor-pointer mt-12">
             Download Resume
