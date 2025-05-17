@@ -9,6 +9,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import { Typewriter } from "react-simple-typewriter";
 import { Theme } from "./Theme";
 import Link from "next/link";
+import { Button } from "./ui/button";
 const Introduction = () => {
   return (
     <motion.div
@@ -32,7 +33,7 @@ const Introduction = () => {
             />
           </h1>
           <h2 className="text-lg text-center text-gray-700">
-            Software Engineer & Frontend Developer
+            Frontend Developer
           </h2>
           <span className="flex items-center text-muted-foreground gap-2.5">
             <LiaGlobeAmericasSolid />
@@ -56,9 +57,13 @@ const Introduction = () => {
               <FaLinkedin className="h-7 w-7 cursor-pointer hover:scale-125 duration-300 delay-300" />
             </Link>
           </div>
-          <div className="text-center cursor-pointer mt-12">
-            Download Resume
-          </div>
+          <Link
+            href="/resume"
+            target="_blank"
+            className="text-center cursor-pointer mt-12"
+          >
+            <Button className="mt-5">View Resume</Button>
+          </Link>
         </div>
       </div>
     </motion.div>

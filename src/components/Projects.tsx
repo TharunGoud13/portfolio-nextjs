@@ -107,6 +107,7 @@ const Projects = () => {
 
 const StyledWrapper = styled.div`
   gap: 1rem;
+  margin-right: 20px;
   .notification {
     display: flex;
     gap: 1rem;
