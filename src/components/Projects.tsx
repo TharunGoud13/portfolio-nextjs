@@ -89,7 +89,7 @@ const Projects = () => {
       <div className="text-[#99999d] text-md">
         Here are a few past projects I&apos;ve worked on.
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3  items-center mx-2 gap-x-10 gap-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 items-center mx-2 gap-y-10 gap-x-20">
         {projects.map((item) => (
           <StyledWrapper key={item.id}>
             <Link target="_blank" href={item.link} className="notification">
@@ -106,8 +106,6 @@ const Projects = () => {
 };
 
 const StyledWrapper = styled.div`
-  gap: 1rem;
-  margin-right: 20px;
   .notification {
     display: flex;
     gap: 1rem;
