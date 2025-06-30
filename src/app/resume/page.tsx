@@ -6,7 +6,7 @@ import { DocumentViewer } from "react-documents";
 
 export default function Resume() {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-background px-2 py-6 sm:px-4">
+    <div className="min-h-screen w-full flex flex-col items-center bg-background px-2 py-6 sm:px-4">
       <div className="w-full max-w-2xl flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-foreground">Resume</h1>
         <Link href="/" aria-label="Go Back Home">
